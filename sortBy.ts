@@ -35,4 +35,4 @@ const sortedPeople = people.sort(sortBy);
 console.log(sortedPeople);
 
 //this is the best optimization I could think of.
-//I am sure if I can do better, but I need t understand better what you try to achive first. 
+//I am sure I can do better, but I need to understand better what you try to achive first. 
