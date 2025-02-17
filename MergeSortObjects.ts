@@ -4,7 +4,7 @@ type Person = {
 }
 
 //sort array of ppl with the merge sort stratedy to get O(n log n) time complexity
-const mergeSortObject = (arr: Person[], key: keyof Person): Person[] => {
+const mergeSortObjects = (arr: Person[], key: keyof Person): Person[] => {
     if (arr.length <= 1) return arr;
 
     //split the array to two
@@ -14,14 +14,14 @@ const mergeSortObject = (arr: Person[], key: keyof Person): Person[] => {
 
     //the recursive call to mergeSortObject will make sure 
     //all arrays will be sorted when they are compared by the mergeObject;
-    return mergeObject(
-        mergeSortObject(left, key),
+    return mergeObjects(
+        mergeSortObjects(left, key),
         mergeSortObject(right, key),
         key
     );
 };
 
-const mergeObject = (left: Person[], right: Person[], key: keyof Person): Person[] => {
+const mergeObjects = (left: Person[], right: Person[], key: keyof Person): Person[] => {
     let result: Person[] = [];
     let leftIndex = left.length;
     let rightIndex = right.length;
@@ -51,4 +51,4 @@ const ppl: Person[] = [
     { name: 'Yakov', age: 66 },
 ];
 
-console.log(mergeSortObject(ppl, 'age'));
+console.log(mergeSortObjects(ppl, 'age'));
